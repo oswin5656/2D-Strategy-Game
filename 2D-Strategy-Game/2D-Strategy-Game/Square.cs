@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
-
 namespace _2D_Strategy_Game
 {
-    class Grid
+    class Square
     {
-        private Square[][] squares;
     }
 }
