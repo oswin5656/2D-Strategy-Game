@@ -11,6 +11,9 @@ namespace _2D_Strategy_Game
         private Square location;
 
 
+        public Square Location() { return location; }
+        public void SetLocation(Square location) { this.location = location; }
+
 
         public void Draw(GameTime gameTime)
         {
