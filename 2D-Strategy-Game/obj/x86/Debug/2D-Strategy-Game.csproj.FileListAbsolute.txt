@@ -25,3 +25,27 @@ c:\users\nick\documents\visual studio 2013\Projects\2D-Strategy-Game\2D-Strategy
 c:\users\nick\documents\visual studio 2013\Projects\2D-Strategy-Game\2D-Strategy-Game\obj\x86\Debug\2D-Strategy-Game.pdb
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\obj\x86\Debug\2D-Strategy-Game.exe
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\obj\x86\Debug\2D-Strategy-Game.pdb
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\obj\x86\Debug\2D-Strategy-Game.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\Content\plains.png
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\2D-Strategy-Game.exe
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\2D-Strategy-Game.pdb
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct3D9.xml

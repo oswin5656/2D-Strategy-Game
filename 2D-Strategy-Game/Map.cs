@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,19 @@ namespace _2D_Strategy_Game
 {
     class Map
     {
-        private Square[,] squares;
-        private List<Unit> enemies;
-        private int rows;
-        private int cols;
+        private Square[,] squares; // 2d array of squares, the most important piece of the map
+        private List<Unit> enemies; //the list of enemies on the map
+        private int rows; //hieght of map in # of squares
+        private int cols; //width of map in # of squares
 
-        public Map(Square[,] squares, List<Unit> enemies, int rows, int cols)
-        {
-            this.squares = squares;
+
+        /* constructor - note that we probably won't use this one much in the final game.
+         * Rather, we will usually use the default constructor (which initializes all the variables as nulls)
+         * and then use the Load method to get all the info from a text file
+         * */
+        public Map(Square[,] squares, List<Unit> enemies, int rows, int cols) 
+        {                                                                      
+            this.squares = squares;                                           
             this.enemies = enemies;
             this.rows = rows;
             this.cols = cols;
@@ -32,7 +38,7 @@ namespace _2D_Strategy_Game
 
         public int Cols() { return cols; }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch) //map draw method. Draws all squares and then all units on top of them
         {
             foreach (Square s in squares)
             {
@@ -45,8 +51,20 @@ namespace _2D_Strategy_Game
             }
         }
 
+        public void LoadContent(ContentManager content) //Load the content for all the squares and enemies in the map
+        {
+            foreach(Square s in squares)
+            {
+                s.LoadContent(content);
+            }
+        }
 
-        public override string ToString()
+        public void Update(GameTime gameTime)
+        {
+
+        }
+
+        public override string ToString() //puts all the info from the map into a string, useful for writing a map to a text file.
         {
             string str = "" + Rows() + "\n" + Cols();
             foreach (Square s in squares)
@@ -61,17 +79,17 @@ namespace _2D_Strategy_Game
             return str;
         }
 
-        public void Load(string filename)
+        public void Load(string filename) //reads all the info for a map from a text file.
         {
             StreamReader stream = new StreamReader(filename);
             string line = stream.ReadLine();
-            this.rows = int.Parse(line);
+            this.rows = int.Parse(line); // first line is the # of rows
             line = stream.ReadLine();
-            this.cols = int.Parse(line);
+            this.cols = int.Parse(line); // second line is the # of columns
             this.squares = new Square[rows, cols];
             for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < cols; j++)  // rest of the lines are each one square
                 {
                     line = stream.ReadLine();
                     squares[i, j].Load(line);

@@ -11,6 +11,7 @@ namespace _2D_Strategy_Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        GameData gameData;
 
         public Game1()
         {
@@ -27,12 +28,13 @@ namespace _2D_Strategy_Game
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            GameData gameData = new GameData();
-            gameData.SetMap(MapGenerator.GeneratePlainMap(5, 5));
+            gameData = new GameData();
+            gameData.Initialize();
+            
             string s = gameData.Map().ToString();
             System.Console.Write(s);
             System.IO.File.WriteAllText("Map1.txt", s);
-           
+            
 
             base.Initialize();
         }
@@ -45,7 +47,7 @@ namespace _2D_Strategy_Game
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            gameData.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -69,7 +71,7 @@ namespace _2D_Strategy_Game
                 Exit();
 
             // TODO: Add your update logic here
-
+            gameData.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -83,7 +85,7 @@ namespace _2D_Strategy_Game
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-
+            gameData.Draw(spriteBatch); //this is where our drawing happens. gameData.Draw goes on and calls all our other draw methods
             spriteBatch.End();
             base.Draw(gameTime);
         }
