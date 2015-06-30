@@ -82,7 +82,9 @@ namespace _2D_Strategy_Game
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
 
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

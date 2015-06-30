@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace _2D_Strategy_Game
     {
         private Map map;
 
-        public void Draw(GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch)
         {
-            map.Draw(gameTime);
+            map.Draw(spriteBatch);
         }
 
         public Map Map() { return this.map; }

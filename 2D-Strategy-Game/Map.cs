@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,16 +32,16 @@ namespace _2D_Strategy_Game
 
         public int Cols() { return cols; }
 
-        public void Draw(GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch)
         {
             foreach (Square s in squares)
             {
-                s.Draw(gameTime);
+                s.Draw(spriteBatch);
             }
 
             foreach (Unit u in enemies)
             {
-                u.Draw(gameTime);
+                u.Draw(spriteBatch);
             }
         }
 
