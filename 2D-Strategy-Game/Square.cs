@@ -10,7 +10,7 @@ namespace _2D_Strategy_Game
 {
     class Square
     {
-        public static int SQUARE_SIZE = 25;
+        public static int SQUARE_SIZE = 30;
         
 
         private int row, col;
@@ -20,6 +20,7 @@ namespace _2D_Strategy_Game
         private Texture2D image;  //the image that will be drawn for the square
         private Vector2 position; // the position in pixels of the top right corner of the square - equal to (row * SQUARE_SIZE, col * SQUARE_SIZE) 
         private bool selected;    // represents if the cursor is over this square
+        private Map map;
 
         public Square(int row, int col, string terrain, bool passable, int moveCost)
         {
@@ -34,6 +35,9 @@ namespace _2D_Strategy_Game
 
         public int Row() { return row; }
         public int Col() { return col; }
+        public Map Map(){return map;}
+        public void SetMap (Map map) { this.map = map;}
+
 
         public void Select() { selected = true; }
         public void Deselect() { selected = false; }

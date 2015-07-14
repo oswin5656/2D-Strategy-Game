@@ -15,6 +15,7 @@ namespace _2D_Strategy_Game
         private List<Unit> enemies; //the list of enemies on the map
         private int rows; //hieght of map in # of squares
         private int cols; //width of map in # of squares
+        
 
 
         /* constructor - note that we probably won't use this one much in the final game.
@@ -56,6 +57,7 @@ namespace _2D_Strategy_Game
             foreach(Square s in squares)
             {
                 s.LoadContent(content);
+                s.SetMap(this);
             }
         }
 
