@@ -10,7 +10,7 @@ namespace _2D_Strategy_Game
 {
     class Square
     {
-        public static int SQUARE_SIZE = 30;
+        public static int SQUARE_SIZE = 50;
         
 
         private int row, col;
@@ -37,20 +37,20 @@ namespace _2D_Strategy_Game
         public int Col() { return col; }
         public Map Map(){return map;}
         public void SetMap (Map map) { this.map = map;}
-
+        public Vector2 Position() { return position; }
 
         public void Select() { selected = true; }
         public void Deselect() { selected = false; }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 offset)
         {
             if (selected)   // changes draw color if square is highlighted
             {
-                spriteBatch.Draw(image, position, Color.Orange);
+                spriteBatch.Draw(image, position + offset, Color.Orange);
             }
             else
             {
-                spriteBatch.Draw(image, position, Color.White);
+                spriteBatch.Draw(image, position + offset, Color.White);
             }
         }
 
@@ -60,8 +60,28 @@ namespace _2D_Strategy_Game
             row = int.Parse(data[0]);
             col = int.Parse(data[1]);
             terrain = data[2];
-            passable = bool.Parse(data[3]);
-            moveCost = int.Parse(data[4]);
+            switch (terrain)
+            {
+                case "plains":
+                    passable = true;
+                    moveCost = 2;
+                    break;
+                case "forest":
+                    passable = true;
+                    moveCost = 3;
+                    break;
+                case "hills":
+                    passable = true;
+                    moveCost = 4;
+                    break;
+                case "mountain":
+                    passable = true;
+                    moveCost = 10;
+                    break;
+            }
+
+            //passable = bool.Parse(data[3]);
+            //moveCost = int.Parse(data[4]);
             selected = false;
         }
 
@@ -72,7 +92,7 @@ namespace _2D_Strategy_Game
 
         public override string ToString()  //writes square to a string. Important if we want to save or create maps in game.
         {
-            return "" + row + " " + col + " " + terrain + " " + passable + " " + moveCost;
+            return "" + row + " " + col + " " + terrain; // +" " + passable + " " + moveCost;
         }
     }
 }

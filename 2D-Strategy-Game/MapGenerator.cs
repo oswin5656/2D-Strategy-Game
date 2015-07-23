@@ -14,7 +14,7 @@ namespace _2D_Strategy_Game
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    squares[i, j] = new Square(i, j, "plains", true, 1);
+                    squares[i, j] = new Square(i, j, "plains", true, 2);
                 }
             }
 

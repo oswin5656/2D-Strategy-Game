@@ -34,7 +34,9 @@ namespace _2D_Strategy_Game
             string s = gameData.Map().ToString();
             System.Console.Write(s);
             System.IO.File.WriteAllText("Map1.txt", s);
-            
+            graphics.PreferredBackBufferWidth = (int)gameData.ScreenDimensions().X;
+            graphics.PreferredBackBufferHeight = (int)gameData.ScreenDimensions().Y;
+            graphics.ApplyChanges();
 
             base.Initialize();
         }

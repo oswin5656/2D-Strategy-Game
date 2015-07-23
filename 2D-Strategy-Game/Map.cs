@@ -13,8 +13,10 @@ namespace _2D_Strategy_Game
     {
         private Square[,] squares; // 2d array of squares, the most important piece of the map
         private List<Unit> enemies; //the list of enemies on the map
+        private List<Unit> units; // list of your units on map
         private int rows; //hieght of map in # of squares
         private int cols; //width of map in # of squares
+        private Vector2 offset; //allows view of map to follow cursor
         
 
 
@@ -28,13 +30,17 @@ namespace _2D_Strategy_Game
             this.enemies = enemies;
             this.rows = rows;
             this.cols = cols;
+            this.offset = Vector2.Zero;
+            this.units = new List<Unit>();
         }
 
-
+        public void AddUnit(Unit unit) { units.Add(unit); }
+        public Unit Unit(int index) { return units[index]; }
         public Square Square(int row, int col) { return squares[row, col]; }
 
-
-
+        public Vector2 Offset() { return offset; }
+        public void SetOffset(Vector2 offset) { this.offset = offset; }
+        
         public int Rows() { return rows; }
 
         public int Cols() { return cols; }
@@ -43,12 +49,17 @@ namespace _2D_Strategy_Game
         {
             foreach (Square s in squares)
             {
-                s.Draw(spriteBatch);
+                s.Draw(spriteBatch, offset);
             }
 
             foreach (Unit u in enemies)
             {
-                u.Draw(spriteBatch);
+                u.Draw(spriteBatch, offset);
+            }
+
+            foreach (Unit u in units)
+            {
+                u.Draw(spriteBatch, offset);
             }
         }
 
@@ -59,11 +70,18 @@ namespace _2D_Strategy_Game
                 s.LoadContent(content);
                 s.SetMap(this);
             }
+            foreach(Unit u in units)
+            {
+                u.LoadContent(content);
+            }
         }
 
         public void Update(GameTime gameTime)
         {
-
+            foreach(Unit u in units)
+            {
+                u.Update(gameTime);
+            }
         }
 
         public override string ToString() //puts all the info from the map into a string, useful for writing a map to a text file.
@@ -77,6 +95,7 @@ namespace _2D_Strategy_Game
             {
                 str += "\n" + u.ToString();
             }
+            
 
             return str;
         }

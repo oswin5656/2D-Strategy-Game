@@ -49,3 +49,4 @@ C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Deb
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.XInput.xml
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\Content\Unit_Idle.png
