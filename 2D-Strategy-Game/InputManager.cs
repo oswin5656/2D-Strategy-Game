@@ -15,7 +15,7 @@ namespace _2D_Strategy_Game
 
         public KeyboardState PrevKeyState() {return prevKeyState;}
         public KeyboardState KeyState() {return  keyState;}
-
+        
         public void Update()
         {
             prevKeyState = keyState;

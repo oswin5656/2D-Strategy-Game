@@ -50,3 +50,6 @@ C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Deb
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\Content\Unit_Idle.png
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\Content\forest.png
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\Content\hills.png
+C:\Users\Nick\Documents\GitHub\2D-Strategy-Game\2D-Strategy-Game\bin\Windows\Debug\Content\mountain.png

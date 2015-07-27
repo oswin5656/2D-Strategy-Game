@@ -18,19 +18,21 @@ namespace _2D_Strategy_Game
     {
         private Map map; // the current map
         private Vector2 cursor; // represents where the cursor is at
-        Square selected; // the square which the cursor is over
+        Square currentSquare; // the square which the cursor is over
         InputManager input; // manages input
         private Vector2 screenDimensions; // dimensions of the screen
         private List<Unit> playerUnits;
-
+        bool unitSelected;
+        Unit selected;
         public void Initialize()
         {
-            map = (MapGenerator.GeneratePlainMap(15, 15));
+            map = (MapGenerator.GenerateRandomMap(15, 15));
             map.AddUnit(new Unit());
-            map.Unit(0).SetLocation(map.Square(0, 0));
+            map.Unit(0).SetLocation(map.Square(5, 5));
             cursor = new Vector2(0, 0);
-            selected = map.Square((int)cursor.Y, (int)cursor.X);
+            currentSquare = map.Square((int)cursor.Y, (int)cursor.X);
             input = new InputManager();
+            unitSelected = false;
             screenDimensions = new Vector2(1000, 500);
         }
 
@@ -43,14 +45,14 @@ namespace _2D_Strategy_Game
 
         public void Update(GameTime gameTime) 
         {
-            input.Update();
+            input.Update();          //updates the input manager
 
-            selected.Deselect(); // deselect previously selected square
-            selected = map.Square((int)cursor.Y, (int)cursor.X); 
-            selected.Select();  // reset the selected square to the one which the cursor is over
+            currentSquare.Deselect(); // deselect previously selected square
+            currentSquare = map.Square((int)cursor.Y, (int)cursor.X); 
+            currentSquare.Select();  // reset the selected square to the one which the cursor is over
                                    // note that if the cursor doesn't move, it just deselects and selects the same square.
             updateOffset();
-            MapInput();
+            MapInput();            //helper function, defined below. Deals with the key input, updates the cursor position etc.
             map.Update(gameTime);  //calls the map to update
             
         }
@@ -85,9 +87,49 @@ namespace _2D_Strategy_Game
             {
                 cursor.X += 1;
             }
+
+
+            if(unitSelected)
+            {
+                if (input.KeyPressed(Keys.RightShift))
+                {
+                    deselectUnit();
+                }
+                if(input.KeyPressed(Keys.Enter) && selected.InMoveRange().Contains(map.Square((int)cursor.Y, (int)cursor.X)))
+                {
+                    selected.MoveTo(map.Square((int)cursor.Y, (int)cursor.X));
+                    deselectUnit();
+                }
+            }
+            else
+            {
+                if (input.KeyPressed(Keys.Enter) && (map.Square((int)cursor.Y, (int)cursor.X).Occupant() != null))
+                {
+                    map.Square((int)cursor.Y, (int)cursor.X).Occupant().Select();
+                    selected = map.Square((int)cursor.Y, (int)cursor.X).Occupant();
+                    unitSelected = true;
+                }
+
+            }
+
         }
 
-        private void updateOffset() //checks if cursor is closer than three squares from edge and changes the offset if it is
+        private void deselectUnit()
+        {
+            selected.Deselect();
+            selected = null;
+            unitSelected = false;
+            foreach (Square s in map.Squares())
+            {
+                s.SetDistanceFrom(999);
+                s.SPath().Clear();
+            }
+        }
+
+        /*checks if cursor is closer than three squares from edge and changes the offset if it is.
+         * This allows the camera to follow the cursor when it gets close to the edge.
+         * */
+        private void updateOffset()
         {
             if(cursor.X * Square.SQUARE_SIZE + map.Offset().X < 3 * Square.SQUARE_SIZE)
             {

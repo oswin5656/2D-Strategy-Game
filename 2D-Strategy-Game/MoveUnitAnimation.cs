@@ -9,8 +9,13 @@ using Microsoft.Xna.Framework.Content;
 
 namespace _2D_Strategy_Game
 {
-    class IdleUnitAnimation : Animation
+    class MoveUnitAnimation : Animation
     {
+        List<Square> path;
+        public MoveUnitAnimation(List<Square> path)
+        {
+            this.path = path;
+        }
 
         public override void LoadContent(ContentManager Content, Texture2D image, string text, Vector2 position)
         {
@@ -35,7 +40,7 @@ namespace _2D_Strategy_Game
                     if (currentFrame.X > frames.X)
                         currentFrame.X = 0;
                 }
-            } 
+            }
             else
             {
                 frameCounter = 0;
@@ -43,6 +48,5 @@ namespace _2D_Strategy_Game
             }
             sourceRect = new Rectangle((int)currentFrame.X * Square.SQUARE_SIZE, (int)currentFrame.Y * Square.SQUARE_SIZE, Square.SQUARE_SIZE, Square.SQUARE_SIZE);
         }
-
     }
 }

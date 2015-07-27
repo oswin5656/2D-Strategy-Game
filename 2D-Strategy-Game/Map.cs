@@ -37,7 +37,7 @@ namespace _2D_Strategy_Game
         public void AddUnit(Unit unit) { units.Add(unit); }
         public Unit Unit(int index) { return units[index]; }
         public Square Square(int row, int col) { return squares[row, col]; }
-
+        public Square[,] Squares() { return squares; }
         public Vector2 Offset() { return offset; }
         public void SetOffset(Vector2 offset) { this.offset = offset; }
         
@@ -99,6 +99,8 @@ namespace _2D_Strategy_Game
 
             return str;
         }
+
+      
 
         public void Load(string filename) //reads all the info for a map from a text file.
         {
